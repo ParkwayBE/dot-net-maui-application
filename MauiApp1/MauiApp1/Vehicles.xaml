@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MauiApp1.VehiclesPage"
+             Title="Vehicles List">
+    <VerticalStackLayout>
+        
+        <StackLayout>
+            <ListView x:Name="myCarsListView" WidthRequest="400" ItemSelected="OnCarSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- Item Content Goes Here -->
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Id}" Grid.Column="0" HorizontalOptions="FillAndExpand"/>
+                                <Label Text="{Binding Name}" Grid.Column="1" HorizontalOptions="FillAndExpand"/>
+                                <Label Text="{Binding Booked}" Grid.Column="2" HorizontalOptions="FillAndExpand"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout>
+               
+                <Button Text="Add Vehicle" Clicked="OnAddItemClicked" WidthRequest="200"/>
+            </StackLayout>
+            
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

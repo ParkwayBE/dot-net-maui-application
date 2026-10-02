@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.AddBooking"
+             Title="AddBooking">
+    <VerticalStackLayout>
+        <StackLayout>
+            <Label Text="Name:" WidthRequest="200"/>
+            <Entry x:Name="driverEntry" WidthRequest="200"/>
+            <Button Text="Add Booking" Clicked="OnAddItemClicked" WidthRequest="200"/>
+        </StackLayout>
+        <StackLayout>
+
+
+            <Picker Title="Select a car"
+        ItemsSource="{Binding cars}"
+        ItemDisplayBinding="{Binding car.Name}" />
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
